@@ -17,7 +17,7 @@ Where:
 - `/src`: Core Python implementation of the OCM Hamiltonian and $S_M$ metric.
 - `/scripts`: Tools for calculating the Density Ceiling ($\rho_{crit}$) and generating the **Figure 2a Bifurcation plot**.
 - `/notebooks`: Verification scripts for the Tully-Fisher $v^4 \propto M$ derivation.
-- `/media`: Supplementary high-speed visual simulations ($S_1$–$S_{20}$).
+- `/media`: Supplementary high-speed visual simulations ($S_1$–l to $S_{20}$).
 
 ## 3. Supplementary Media: $S_1$ to $S_{20}$
 The videos in the `/media` directory provide visual evidence of the **Order Creator Mechanism (OCM)** during nodal ignition.
