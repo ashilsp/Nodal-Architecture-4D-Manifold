@@ -15,7 +15,7 @@ Where:
 
 ## 2. Repository Structure
 - `/src`: Core Python implementation of the OCM Hamiltonian and $S_M$ metric.
-- `/scripts`: Tools for calculating the Density Ceiling ($\rho_{crit}$) and avoiding singularities.
+- `/scripts`: Tools for calculating the Density Ceiling ($\rho_{crit}$) and generating the **Figure 2a Bifurcation plot**.
 - `/notebooks`: Verification scripts for the Tully-Fisher $v^4 \propto M$ derivation.
 - `/media`: Supplementary high-speed visual simulations ($S_1$–$S_{20}$).
 
@@ -26,17 +26,20 @@ The videos in the `/media` directory provide visual evidence of the **Order Crea
 * **$S_6$ to $S_{12}$** : Critical Saturation ($S_M \approx 1.0$) showing the formation of the "Hollow Core" and the 4D bridge; includes super-critical events ($S_M > 2.0$) simulating Kilonova splicing and high-energy manifold stiffening.
 * **$S_{13}$ to $S_{20}$** : Large-scale tethering and global shear dynamics that govern galactic evolution and cosmological isotropy.
 
-
-## 4. Computational Proof: Tully-Fisher Scaling
-To verify the topological origin of galactic scaling laws, run the provided proof script. This script uses the Manifold Saturation constant ($a_0 \approx 1.2 \times 10^{-10} m/s^2$) to recover the flat rotation curve scaling.
+## 4. Computational Proofs and Visualizations
+To verify the topological origin of galactic scaling laws and stellar bifurcation, run the provided scripts.
 
 ### Instructions:
-1. Ensure you have the requirements installed:
+1. **Environment Setup**:
    `pip install -r requirements.txt`
-2. Run the proof:
+
+2. **Verify Tully-Fisher Scaling ($v^4 \propto M$)**:
    `python notebooks/Tully_Fisher_Proof.py`
 
-The output will confirm the $v^4 \propto M$ relationship derived from manifold viscosity rather than dark matter particles.
+3. **Generate Figure 2a (Evolutionary Bifurcation)**:
+   `python scripts/generate_fig2.py`
+
+The outputs will confirm the manifold saturation thresholds and the relationship derived from manifold viscosity rather than dark matter particles.
 
 ---
 **Author:** Ashil S.  
