@@ -17,13 +17,15 @@ Where:
 - `/src`: Core Python implementation of the OCM Hamiltonian and $S_M$ metric.
 - `/scripts`: Tools for calculating the Density Ceiling ($\rho_{crit}$) and avoiding singularities.
 - `/notebooks`: Verification scripts for the Tully-Fisher $v^4 \propto M$ derivation.
-- `/media`: Supplementary high-speed visual simulations ($S_1$–$S_20$).
+- `/media`: Supplementary high-speed visual simulations ($S_1$–$S_{20}$).
 
-## 3. Supplementary Media: $S_1$ to $S_20$
+## 3. Supplementary Media: $S_1$ to $S_{20}$
 The videos in the `/media` directory provide visual evidence of the **Order Creator Mechanism (OCM)** during nodal ignition.
-- **$S_1$–$S_5$**: Initial manifold tension and the onset of the metastable bottleneck.
-- **$S_6$–$S_12$**: Critical Saturation ($S_M \approx 1.0$) showing the formation of the "Hollow Core" and the 4D bridge, super-critical events ($S_M > 2.0$) simulating Kilonova splicing and high-energy manifold stiffening.
-- **$S_13$–$S_20$**: Large-scale tethering and global shear dynamics that govern galactic evolution and cosmological isotropy.
+
+* **$S_1$–$S_5$**: Initial manifold tension and the onset of the metastable bottleneck.
+* **$S_6$–$S_{12}$**: Critical Saturation ($S_M \approx 1.0$) showing the formation of the "Hollow Core" and the 4D bridge; includes super-critical events ($S_M > 2.0$) simulating Kilonova splicing and high-energy manifold stiffening.
+* **$S_{13}$–$S_{20}$**: Large-scale tethering and global shear dynamics that govern galactic evolution and cosmological isotropy.
+
 
 ## 4. Computational Proof: Tully-Fisher Scaling
 To verify the topological origin of galactic scaling laws, run the provided proof script. This script uses the Manifold Saturation constant ($a_0 \approx 1.2 \times 10^{-10} m/s^2$) to recover the flat rotation curve scaling.
