@@ -22,9 +22,9 @@ Where:
 ## 3. Supplementary Media: $S_1$ to $S_{20}$
 The videos in the `/media` directory provide visual evidence of the **Order Creator Mechanism (OCM)** during nodal ignition.
 
-* **$S_1$–$S_{5}$** : Initial manifold tension and the onset of the metastable bottleneck.
-* **$S_6$–$S_{12}$** : Critical Saturation ($S_M \approx 1.0$) showing the formation of the "Hollow Core" and the 4D bridge; includes super-critical events ($S_M > 2.0$) simulating Kilonova splicing and high-energy manifold stiffening.
-* **$S_{13}$–$S_{20}$** : Large-scale tethering and global shear dynamics that govern galactic evolution and cosmological isotropy.
+* **$S_1$ to $S_{5}$** : Initial manifold tension and the onset of the metastable bottleneck.
+* **$S_6$ to $S_{12}$** : Critical Saturation ($S_M \approx 1.0$) showing the formation of the "Hollow Core" and the 4D bridge; includes super-critical events ($S_M > 2.0$) simulating Kilonova splicing and high-energy manifold stiffening.
+* **$S_{13}$ to $S_{20}$** : Large-scale tethering and global shear dynamics that govern galactic evolution and cosmological isotropy.
 
 
 ## 4. Computational Proof: Tully-Fisher Scaling
