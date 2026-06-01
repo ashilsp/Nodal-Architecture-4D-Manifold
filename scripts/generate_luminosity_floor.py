@@ -1,41 +1,42 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.thermodynamics import calculate_hybrid_luminosity
+from src.thermodynamics import calculate_ocm_hybrid_luminosity, calculate_violet_limit_spectrum
 
-# Setup accretion rate sampling bounds approaching absolute starvation (0 to 4 Eddington ratio)
-accretion_rates = np.linspace(0.0, 4.0, 200)
+# 1. Recreate the Luminosity Discrepancy Floor (Manuscript Figure 8 data)
+mdot_sweep = np.linspace(0.0, 4.0, 200)
+l_classical_list = []
+l_hybrid_list = []
 
-# Calculate both physical tracks using the core thermodynamic engine
-classical_profile, ocm_profile = calculate_hybrid_luminosity(accretion_rates)
+for m in mdot_sweep:
+    l_class, l_hyb = calculate_ocm_hybrid_luminosity(m)
+    l_classical_list.append(l_class)
+    l_hybrid_list.append(l_hyb)
 
-# Generate publication verification plot mimicking your native LaTeX TikZ/PGFPlots asset
-plt.figure(figsize=(8, 5.5))
+# 2. Sweep wavelengths for the QGP Topological Hardening Spectrum
+wavelengths = np.linspace(50, 500, 300)
+violet_limit_flux = calculate_violet_limit_spectrum(wavelengths)
 
-plt.plot(accretion_rates, classical_profile, label=r'Standard Accretion Model ($L \rightarrow 0$)', 
-         color='blue', linestyle='--', linewidth=1.5)
-plt.plot(accretion_rates, ocm_profile, label=r'OCM Hybrid Profile ($\Lambda_{OCM}$ Floor)', 
-         color='red', linewidth=2.0)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.5))
 
-# Replicate the exact annotations from your LaTeX code document
-plt.axhline(-1.5, color='purple', linestyle=':', alpha=0.8)
-plt.text(3.9, -1.4, r'Metabolic Floor ($\Lambda_{OCM}$)', color='purple', 
-         fontweight='bold', fontsize=8, ha='right')
+# Left Panel: Exactly reproduce Manuscript Figure 8 layout
+ax1.plot(mdot_sweep, np.log10(np.clip(l_classical_list, 1e-6, None)), 'b--', linewidth=1.5, label='Standard Accretion ($L \\to 0$)')
+ax1.plot(mdot_sweep, np.log10(l_hybrid_list), 'r-', linewidth=2.5, label=r'OCM Hybrid Profile ($\Lambda_{OCM}$ Floor)')
+ax1.axhline(-1.5, color='purple', linestyle=':', label='Metabolic Floor')
+ax1.set_xlabel(r'Accretion Rate ($\dot{M} / \dot{M}_{Edd}$)')
+ax1.set_ylabel(r'Log Luminosity ($\log L / L_{Edd}$)')
+ax1.set_title('a) Luminosity Discrepancy in Fuel-Depleted Quasars')
+ax1.grid(True, linestyle=':', alpha=0.5)
+ax1.legend(loc='lower right')
 
-# Highlight the 50,000x radiative excess at low fuel points
-plt.annotate('', xy=(0.5, -1.5), xytext=(0.5, -2.75),
-             arrowprops=dict(arrowstyle='<->', color='purple', lw=1.2))
-plt.text(0.6, -2.1, '50,000$\\times$ Radiative Excess\n(Observable Plateau)', 
-         color='purple', fontweight='bold', fontsize=8, va='center')
-
-# Graph aesthetics matching a high-tier astrophysical paper layout
-plt.xlim(0, 4)
-plt.ylim(-4, 2)
-plt.xlabel(r'Accretion Rate ($\dot{M} / \dot{M}_{\text{Edd}}$)')
-plt.ylabel(r'Log Luminosity ($\log L / L_{\text{Edd}}$)')
-plt.title('Luminosity Discrepancy in Fuel-Depleted Quasars (Figure 8 Verification)')
-plt.legend(loc='lower right')
-plt.grid(True, linestyle=':', alpha=0.6)
+# Right Panel: The Violet Limit Blackbody Decoupling Bump
+ax2.plot(wavelengths, violet_limit_flux, color='darkviolet', linewidth=2.5, label='Internal QGP Boundary Emission')
+ax2.axvspan(120, 300, color='magenta', alpha=0.12, label='Topological Hardening Domain')
+ax2.set_xlabel('Wavelength $\\lambda$ (nm)')
+ax2.set_ylabel('Normalized Radiant Flux Intensity')
+ax2.set_title(r'b) The Internal "Violet Limit" Spectral Signature')
+ax2.grid(True, linestyle=':', alpha=0.5)
+ax2.legend(loc='upper right')
 
 plt.tight_layout()
-plt.savefig('luminosity_floor_verification.png', dpi=300)
-print("Success: 'luminosity_floor_verification.png' successfully compiled and saved.")
+plt.savefig('thermodynamic_metabolic_floor.png', dpi=300)
+print("Success: 'thermodynamic_metabolic_floor.png' updated with the Violet Limit QGP spectrum.")
