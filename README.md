@@ -43,6 +43,20 @@ The code is divided into a core physics mathematical library (`/src`), an automa
 
 ---
 
+## 🎬 Supplementary Multimedia Assets (Videos S1–S36)
+
+The complete repository of high-fidelity multimedia video tracks tracking the geometric transformations, physical boundaries, and state-evolution timelines of this framework is permanently hosted under our official release page:
+
+📌 **[Access Official Multimedia Release v1.0.0](https://github.com/ashilsp/Nodal-Architecture-4D-Manifold/releases/tag/v1.0.0)**
+
+### 📦 Release Manifest Summary:
+* **Encoding & Formatting:** Files are encoded using an H.264/MPEG-4 AVC container structure optimized at a fixed rendering frequency of 25 frames per second (fps).
+* **Micro-Scale Validation (Videos S1–S16):** Visualizes the metrics of the Open-System Cosmic Manifold (OCM) interface, manifold saturation boundaries, quantum regulation thresholds, and internal thermodynamic floors.
+* **Astrophysical Dynamics & Scaling Laws (Videos S17–S33):** Tracks the geometric evolution of galactic tethers, spiral stability thresholds, local structural seams, the Plane of Satellites distribution, and solutions to the winding problem.
+* **Foundational Mechanics (Videos S34–S36):** Illustrates the equations of motion, Kaluza-Klein gauge selections, and macro thermodynamic irreversibility timelines accompanying the main manuscript and Supplementary Information appendix paper.
+
+---
+
 ## 📈 Local Environment Verification
 
 To install dependencies and re-render the entire suite of 14 verification figures locally, execute the following commands in your terminal:
